@@ -3,7 +3,7 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class OMDBService {
+export class OmdbService {
   baseUri: string;
 
   // Not sure if we even need this? //
