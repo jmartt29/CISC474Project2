@@ -2,6 +2,7 @@ import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Http, HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 import { OMDBService } from './omdb.service';
 
