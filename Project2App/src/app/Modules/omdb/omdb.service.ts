@@ -6,11 +6,9 @@ import 'rxjs/add/operator/map';
 export class OmdbService {
   baseUri: string;
 
-  // Not sure if we even need this? //
   private headers = new Headers({
     'Content-Type': 'application/json'
   });
-  ////////////////////////////////////
 
   constructor(private http: Http, baseAPIUri: string) {
     this.baseUri = baseAPIUri;
