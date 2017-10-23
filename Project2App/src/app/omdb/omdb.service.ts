@@ -4,13 +4,21 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class OmdbService {
-  baseUri: string;
+	private baseUri: string;
+	private apiKey: string;
 
-  private headers = new Headers({
-    'Content-Type': 'application/json'
-  });
+	constructor(private http: Http, baseAPIUri: string) {
+		this.baseUri = baseAPIUri;
+		this.apiKey = '15a1bcb7';
+	}
 
-  constructor(private http: Http, baseAPIUri: string) {
-    this.baseUri = baseAPIUri;
-  }
+	private headers = new Headers({
+		'Content-Type': 'application/json'
+	});
+
+	public getData() {
+		return this.http.get(`${this.baseUri}/getAPILink`, {
+			headers: this.headers
+		}).map(data => data.json());
+	}
 }
