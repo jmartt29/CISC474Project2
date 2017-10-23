@@ -6,15 +6,15 @@ import { AppComponent } from './app.component';
 import { OmdbComponent } from './omdb/omdb.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    OmdbComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		OmdbComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

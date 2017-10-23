@@ -7,18 +7,27 @@ export class OmdbService {
 	private apiKey: string;
 	private baseUri: string;
 
-	constructor(private http: Http, baseAPIUri: string) {
-		this.apiKey = '15a1bcb7';
+	constructor(private http: Http, baseAPIUri: string, apiKey: string) {
+		console.log('OmdbService Initializing...');
+
+		this.apiKey = apiKey;
 		this.baseUri = baseAPIUri;
+
 	}
 
 	private headers = new Headers({
 		'Content-Type': 'application/json'
 	});
 
-	public getMovieData(movieData: string) {
+	public getMovieData(movieId: string) {
 		// const movie: string = 'test';
-		return this.http.get(`${this.baseUri}/movie/${movieData}`, {
+		return this.http.get(`${this.baseUri}/movie/${movieId}`, {
+			headers: this.headers
+		}).map(data => data.json());
+	}
+
+	public getAllNicCageMovies() {
+		return this.http.get(`${this.baseUri}/person/${2963}/movie-credits`, {
 			headers: this.headers
 		}).map(data => data.json());
 	}
