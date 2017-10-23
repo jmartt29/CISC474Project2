@@ -12,19 +12,19 @@ const routes: Routes = [
   {path: 'track', component: TracksComponent}
 ];*/
 
-export function Omdbfactory(http: Http){
-  return new OmdbService(http, 'http://www.omdbapi.com/');
+export function Omdbfactory(http: Http) {
+	return new OmdbService(http, 'www.omdbapi.com/3');
 }
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HttpModule
-    //,RouterModule.forChild(routes)
-  ],
-  declarations: [],
-  providers: [{provide: OmdbService, useFactory: Omdbfactory, deps: [Http]}],
-  exports: [RouterModule]
+	imports: [
+		CommonModule,
+		HttpModule
+		// ,RouterModule.forChild(routes)
+	],
+	declarations: [],
+	providers: [{ provide: OmdbService, useFactory: Omdbfactory, deps: [Http] }],
+	exports: [RouterModule]
 })
 export class OmdbModule { }
