@@ -4,15 +4,18 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class OmdbService {
-	private apiKey: string;
-	private baseUri: string;
+	/*private*/ apiKey: string;
+	/*private*/ baseUri: string;
 
-	constructor(private http: Http, baseAPIUri: string, apiKey: string) {
+	public temp: string;
+
+	constructor(private http: Http, baseAPIUri: string) { // , apiKey: string) { // I DONT KNOW WHY THIS DOESNT WORK
+	// constructor(private http: Http) {
 		console.log('OmdbService Initializing...');
 
-		this.apiKey = apiKey;
+		// this.apiKey = apiKey;
 		this.baseUri = baseAPIUri;
-
+		this.temp = 'temp';
 	}
 
 	private headers = new Headers({
