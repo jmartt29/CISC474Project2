@@ -4,18 +4,14 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class OmdbService {
-	/*private*/ apiKey: string;
-	/*private*/ baseUri: string;
+	private apiKey: string;
+	private baseUri: string;
 
-	public temp: string;
-
-	constructor(private http: Http, baseAPIUri: string) { // , apiKey: string) { // I DONT KNOW WHY THIS DOESNT WORK
-	// constructor(private http: Http) {
+	constructor(private http: Http, baseAPIUri: string, apiKey: string) {
 		console.log('OmdbService Initializing...');
 
-		// this.apiKey = apiKey;
+		this.apiKey = apiKey;
 		this.baseUri = baseAPIUri;
-		this.temp = 'temp';
 	}
 
 	private headers = new Headers({
@@ -23,14 +19,17 @@ export class OmdbService {
 	});
 
 	public getMovieData(movieId: string) {
-		// const movie: string = 'test';
-		return this.http.get(`${this.baseUri}/movie/${movieId}`, {
+		const url = `//${this.baseUri}/movie/${movieId}`;
+		console.log(`Sending request to ${url}`);
+		return this.http.get(url, {
 			headers: this.headers
 		}).map(data => data.json());
 	}
 
 	public getAllNicCageMovies() {
-		return this.http.get(`${this.baseUri}/person/${2963}/movie-credits`, {
+		const url = `//${this.baseUri}/person/${2963}/movie-credits`;
+		console.log(`Sending request to ${url}`);
+		return this.http.get(url, {
 			headers: this.headers
 		}).map(data => data.json());
 	}

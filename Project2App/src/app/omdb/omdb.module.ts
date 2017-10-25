@@ -17,9 +17,7 @@ const routes: Routes = [
 ];*/
 
 export function Omdbfactory(http: Http) {
-	// return new OmdbService(http, 'www.omdbapi.com/3', '04528b6a3cf3b49d465219ee1570a501');
-	return new OmdbService(http, 'afdsa');
-	// return new OmdbService(http);
+	return new OmdbService(http, 'www.omdbapi.com/3', '04528b6a3cf3b49d465219ee1570a501');
 }
 
 
