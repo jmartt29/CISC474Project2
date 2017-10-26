@@ -8,14 +8,11 @@ import { OmdbService } from './omdb.service';
 })
 export class OmdbComponent implements OnInit {
 	public nicInfo: JSON;
-	public temp: string;
 
 	constructor(private omdb: OmdbService) { }
-	// constructor() {}
 
 	ngOnInit() {
-		// this.nicInfo = OmdbComponent
-		this.temp = 'test temp';
+		//
 	}
 
 	/**
@@ -27,11 +24,15 @@ export class OmdbComponent implements OnInit {
 		this.omdb.getAllNicCageMovies().subscribe(
 			(success) => {
 				console.log(success);
-				this.temp = 'wooo';
 				this.nicInfo = success;
+
+				// console.group('temp');
+				// for (const x of success.cast) {
+				// 	console.log(x);
+				// }
+				// console.groupEnd();
 			},
 			(error) => {
-				this.temp = 'error';
 				console.error(error);
 		});
 	}

@@ -36,11 +36,21 @@ export class OmdbService {
 	public getAllNicCageMovies() {
 		const url = `//${this.baseUri}/person/${2963}/movie_credits`;
 
-		console.log(`Sending request to ${url}${this.params}`);
+		console.log(`Sending request to ${url}?${this.params}`);
 		return this.http.get(url, {
 			// headers: this.headers
 			params: this.params// ,
 			// search: this.params
-		}).map(data => data.json());
+		}).map(data => {
+			const da = data.json();
+			// for(const d of da.cast) {
+				// Stupid API hack...
+				// TODO: get configuration options and make them options in the service/factory
+				// choose appropriate size from options
+				// see: https://api.themoviedb.org/3/configuration?api_key=04528b6a3cf3b49d465219ee1570a501
+				// d.backdrop_path = `//image.tmdb.org/t/p/w300${d.backdrop_path}?${this.params}`;
+			// }
+			return da;
+		});
 	}
 }
