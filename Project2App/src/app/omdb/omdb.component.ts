@@ -28,7 +28,7 @@ export class OmdbComponent implements OnInit {
 			(success) => {
 				console.log(success);
 				this.temp = 'wooo';
-				this.nicInfo = success.json();
+				this.nicInfo = success;
 			},
 			(error) => {
 				this.temp = 'error';

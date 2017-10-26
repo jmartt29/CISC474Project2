@@ -18,8 +18,11 @@
 	<div class="col-xs-10 col-xs-offset-1 col-md-sm-8 col-md-offset-2">
 		<button (click)="letsGetSomeMovies()">Click me!</button>
 		<div>
-			{{ nicInfo | json }}
-			<!-- {{ nicInfo?.status }} -->
+			ID: {{ nicInfo?.id }}
+			<br />
+			<pre>
+				{{ nicInfo | json }}
+			</pre>
 		</div>
 	</div>
 	
