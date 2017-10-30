@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home/home.component';
 const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
 	{ path: 'home', component: HomeComponent },
-	//{ path: 'omdb', loadChildren: './omdb/omdb.module#OmdbModule' }
+	// { path: 'omdb', loadChildren: './omdb/omdb.module#OmdbModule' }
 	{ path: 'omdb', component: OmdbComponent }
 ];
 
