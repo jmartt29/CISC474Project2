@@ -2,3 +2,16 @@ h2 {
     text-align: center;
     padding: 25px;
 }
+
+body {
+    background-color: lightgray;
+}
+
+a {
+    font-size: 16pt;
+}
+
+div {
+    padding-left: 70px;
+    padding-bottom: 35px;
+}
