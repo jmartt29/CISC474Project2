@@ -12,7 +12,6 @@ div.movies {
 	padding-right: 0px;
 	border-width:1px;
 	/* overflow: hidden; */
-	
 }
 div.info {
 	/* padding-left: 10px; */
@@ -26,3 +25,14 @@ img {
 	margin-right: 10px;
 }
 
+h2 {
+	text-align: center;
+}
+
+.container {
+	text-align: center;
+}
+
+row {
+	padding: 10px;
+}

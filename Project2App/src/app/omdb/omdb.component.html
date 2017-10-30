@@ -3,8 +3,8 @@
 
 	<!-- <div class="row"> -->
 
-	<div class="col-xs-10 col-xs-offset-1 col-md-sm-8 col-md-offset-2">
-		  <button (click)="letsGetSomeMovies()">Click to get all Nick Cage Movies</button>
+	<div class="row"> 
+		  <button class="button" (click)="letsGetSomeMovies()">Click to get all Nick Cage Movies</button>
 	</div>
 	<!-- </div> -->
 	<!-- 		
@@ -12,7 +12,7 @@
 		{{ temp }}
 	</div> -->
 	
-	<div class="col-xs-10 col-xs-offset-1 col-md-sm-8 col-md-offset-2">
+	<div class="col-xs-10 col-md-sm-8 col-md-offset-2">
 		
 		<div>
 			<!-- ID: {{ nicInfo?.id }} -->
@@ -57,6 +57,13 @@
 	</div>
 
 </div>
+
+<script>
+	$(".nav li").on("click", function() {
+		$(".nav li").removeClass("active");
+		$(this).addClass("active");
+	});
+</script>
 
 <!-- 
 	do some ngfor thing to display movie data
