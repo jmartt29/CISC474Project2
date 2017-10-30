@@ -9,10 +9,12 @@ import { AppComponent } from './app.component';
 import { OmdbComponent } from './omdb/omdb.component';
 
 import { OmdbService } from './omdb/omdb.service';
+import { HomeComponent } from './home/home/home.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
+		HomeComponent,
 		// OmdbComponent
 	],
 	imports: [
