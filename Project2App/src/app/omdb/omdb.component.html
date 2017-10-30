@@ -1,19 +1,19 @@
-<h2>TMDB</h2>
+<h2 style="text-align:center;">TMDB</h2>
 <div class="container">
 
 	<!-- <div class="row"> -->
 
 	<div class="col-xs-10 col-xs-offset-1 col-md-sm-8 col-md-offset-2">
-		Click to get all Nick Cage Movies 
+		  <button (click)="letsGetSomeMovies()">Click to get all Nick Cage Movies</button>
 	</div>
 	<!-- </div> -->
 	<!-- 		
 	<div id="testArea" class="col-xs-10 col-xs-offset-1 col-md-sm-8 col-md-offset-2">
 		{{ temp }}
 	</div> -->
-
+	
 	<div class="col-xs-10 col-xs-offset-1 col-md-sm-8 col-md-offset-2">
-		<button (click)="letsGetSomeMovies()">Get Movies!</button>
+		
 		<div>
 			<!-- ID: {{ nicInfo?.id }} -->
 			<br />
@@ -30,13 +30,18 @@
 					<!-- <pre>{{role | json}}</pre> -->
 					<!-- </div> -->
 					<div class="card movies">
-						<img class="card-img-top" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{role.poster_path}}" alt="Error No Image Found">
-						<div class="card-block">
-						  <h4 class="card-title">{{role.title}}</h4>
-						  <p class="card-text">Character: {{role.character}}</p>
+						<div style="float:left;min-width:185px;min-height:278px">
+							<img class="card-img-top" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{role.poster_path}}" alt="No Image Found">
+						</div>
+						<div class="info">
+						  <h4 class="card-title" style="text-align:center;">{{role.title}}</h4>
+						  <p class="card-text">With Nick Cage as {{role.character}}</p>
+						  <p>Rating: {{role.vote_average}}/10</p>
+						  <p>Released: {{role.release_date}}</p> 
+						  <p>{{role.overview}}</p>
 						  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
 						</div>
-					  </div>
+					</div>
 
 					<!-- <div class="card" style="width: 20rem;">
 						<img class="card-img-top" src="..." alt="Card image cap">
@@ -46,7 +51,7 @@
 						  <a href="#" class="btn btn-primary">Go somewhere</a>
 						</div>
 					  </div> -->
-					</div>
+				</div>
 			</div>
 		</div>
 	</div>
