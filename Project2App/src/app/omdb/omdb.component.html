@@ -1,11 +1,10 @@
 <h2>TMDB</h2>
-
 <div class="container">
 
 	<!-- <div class="row"> -->
 
 	<div class="col-xs-10 col-xs-offset-1 col-md-sm-8 col-md-offset-2">
-		BLAH BLAH INSTRUCTIONS click button to load up some movies
+		Click to get all Nick Cage Movies 
 	</div>
 	<!-- </div> -->
 	<!-- 		
@@ -14,20 +13,40 @@
 	</div> -->
 
 	<div class="col-xs-10 col-xs-offset-1 col-md-sm-8 col-md-offset-2">
-		<button (click)="letsGetSomeMovies()">Click me!</button>
+		<button (click)="letsGetSomeMovies()">Get Movies!</button>
 		<div>
-			ID: {{ nicInfo?.id }}
+			<!-- ID: {{ nicInfo?.id }} -->
 			<br />
 			<!-- <pre>
 				{{ nicInfo | json }}
 			</pre> -->
 
 			<div id="nicInformation">
-				<article *ngFor="let role of nicInfo?.cast"> <!-- [style.background-image]="'url(' + role.backdrop_path + ')'" -->
-					Character: {{role.character}}
-					<br /> Title: {{role.title}}
+				<div *ngFor="let role of nicInfo?.cast"> <!-- [style.background-image]="'url(' + role.backdrop_path + ')'" -->
+					<!-- <div>
+					<h1>Title: {{role.title}}</h1>
+					<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{role.poster_path}}">
+					<br /> Character: {{role.character}}
 					<!-- <pre>{{role | json}}</pre> -->
-				</article>
+					<!-- </div> -->
+					<div class="card movies">
+						<img class="card-img-top" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{role.poster_path}}" alt="Error No Image Found">
+						<div class="card-block">
+						  <h4 class="card-title">{{role.title}}</h4>
+						  <p class="card-text">Character: {{role.character}}</p>
+						  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+						</div>
+					  </div>
+
+					<!-- <div class="card" style="width: 20rem;">
+						<img class="card-img-top" src="..." alt="Card image cap">
+						<div class="card-block">
+						  <h4 class="card-title">Card title</h4>
+						  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						  <a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					  </div> -->
+					</div>
 			</div>
 		</div>
 	</div>

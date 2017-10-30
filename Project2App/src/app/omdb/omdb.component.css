@@ -1,3 +1,14 @@
-div {
-	background-color: rgb(0, 180, 102)
+div.movies {
+	/* background-color: rgb(0, 180, 102) */
+	float:left;
+	height:375px;
+	width:185px;
+	-webkit-box-shadow: 5px 5px 10px 1px #B5B5B5;
+	box-shadow: 5px 5px 10px 1px #B5B5B5;
+	margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+	
 }
+
